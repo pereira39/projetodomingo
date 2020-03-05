@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:decorate xmlns="http://www.w3.org/1999/xhtml"
+             xmlns:h="http://xmlns.jcp.org/jsf/html"
+             xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+             xmlns:p="http://primefaces.org/ui"
+             template="template.xhtml"
+             xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:form>
+        <p:fieldset legend="Lista de Pacientes">
+            <h:outputStylesheet library="css" name="estilo.css"/>
+            <h:panelGrid columns="1">
+                <h:dataTable border="1" value="#{pacienteBean.lista}" var="user">
+                    <h:column>
+                        <f:facet name="header">Nome do Paciente</f:facet>
+                            #{user.nome}
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">Endereco</f:facet>
+                            #{user.endereco}
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">Telefone</f:facet>
+                            #{user.telefone}
+                    </h:column>
+                     <h:column>
+                         <h:commandLink action="#{pacienteBean.editar(user)}"> <h:graphicImage value="resources/img/edit.png" /> </h:commandLink>
+                    </h:column>
+                    <h:column>
+                        <h:commandLink action="#{pacienteBean.excluir(user)}"> <h:graphicImage value="resources/img/delete.png" /> </h:commandLink>
+                    </h:column>
+                </h:dataTable>
+            </h:panelGrid>
+        </p:fieldset>
+    </h:form>
+</ui:decorate>
+

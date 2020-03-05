@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:decorate xmlns="http://www.w3.org/1999/xhtml"
+             xmlns:h="http://xmlns.jcp.org/jsf/html"
+             xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+             xmlns:p="http://primefaces.org/ui"
+             xmlns:f="http://xmlns.jcp.org/jsf/core"
+             template="templateadmin.xhtml">
+
+
+    <h:head>
+        <title>Login</title>
+    </h:head>
+    <h:form>
+        <h:outputStylesheet library="css" name="estilo.css"/>
+        <h:panelGrid  columns="1" class="grade">
+
+            <h:panelGrid columns="3">           
+                <h:outputLabel value="Identificador: "/>
+                <h:inputText id="identificador" value="#{usuarioBean.usuario.identificador}" required="true" label="identificador"> 
+                    <f:validateLength minimum="5" maximum="20" />
+                </h:inputText>
+                <h:message for="identificador" style="color:red" />
+            </h:panelGrid>
+            <h:panelGrid columns="3">
+                <h:outputLabel value="Senha: "/>
+                <h:inputSecret id="senha" value="#{usuarioBean.usuario.senha}" required="true" label="senha"> 
+                    <f:validateLength minimum="5" maximum="11" />
+                </h:inputSecret>
+                <h:message for="senha" style="color:red" />
+            </h:panelGrid>   
+            <h:panelGrid columns="2">
+                <h:commandButton value="Ok" action="#{usuarioBean.validar()}"/>
+                <h:commandButton value="Limpar" action="#{usuarioBean.limpar()}"/>
+            </h:panelGrid>
+        </h:panelGrid>
+    </h:form>
+</ui:decorate>

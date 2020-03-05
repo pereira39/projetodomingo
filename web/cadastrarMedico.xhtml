@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:decorate xmlns="http://www.w3.org/1999/xhtml"
+             xmlns:h="http://xmlns.jcp.org/jsf/html"
+             xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+             xmlns:p="http://primefaces.org/ui"
+             template="template.xhtml"
+             xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <h:form>
+        <p:fieldset legend="Cadastrar Novo Médico">
+            <h:panelGrid  columns="1" class="grade">
+            </h:panelGrid>     
+            <h:panelGrid class="grade" columns="1">
+                <h:panelGrid columns="3">
+                    <h:outputLabel value="Nome: "/>
+                    <h:inputText id="nome" value="#{usuarioBean.nome}" required="true" label="nome"> 
+                        <f:validateRegex pattern="(?=^.{2,60}$)^[A-Z][a-z]+(?:[ ](?:das?|dos?|de|e|[A-Z][a-z]+))*$"/>
+                        <f:validateLength minimum="5" maximum="50" />
+                    </h:inputText>
+                    <h:message for="nome" style="color:red" />
+                </h:panelGrid>
+                <h:panelGrid columns="3">
+                    <h:outputLabel value="Crm "/>
+                    <h:inputText id="crm" value="#{medicoBean.medico.crm}" required="true"  label="crm"> 
+                    </h:inputText>
+                    <h:message for="crm" style="color:red" />
+                </h:panelGrid>   
+                <h:panelGrid columns="3">
+                    <h:outputLabel value="Especialidade"/>
+                    <h:inputText id="especialidade" value="#{medicoBean.medico.especialidade}" required="true" label="especialidade"> 
+                        <f:validateLength minimum="5" maximum="50" />
+                    </h:inputText>
+                    <h:message for="especialidade" style="color:red" />
+                </h:panelGrid>   
+                <h:panelGrid columns="2">
+                    <h:commandButton value="Ok" action="#{medicoBean.cadastrarMed()}"/>
+                    <h:commandButton value="Limpar" action="#{medicoBean.limpar()}"/>
+                </h:panelGrid>
+
+            </h:panelGrid>
+
+        </p:fieldset>
+    </h:form>
+
+</ui:decorate>

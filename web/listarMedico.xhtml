@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:decorate xmlns="http://www.w3.org/1999/xhtml"
+             xmlns:h="http://xmlns.jcp.org/jsf/html"
+             xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+             xmlns:p="http://primefaces.org/ui"
+             template="template.xhtml"
+             xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:form>
+        <p:fieldset legend="Lista de Médicos">
+            <h:outputStylesheet library="css" name="estilo.css"/>
+            <h:panelGrid columns="1">
+                <h:dataTable border="1" value="#{medicoBean.lista}" var="medico">
+                    <h:column>
+                        <f:facet name="header">Nome do Medico</f:facet>
+                            #{medico.nome}
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">Crm</f:facet>
+                            #{medico.crm}
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">Cpf</f:facet>
+                            #{medico.cpf}
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">Especialidade   </f:facet>
+                            #{medico.especialidade}
+                    </h:column>
+                    <h:column>
+                        <h:commandLink action="#{medicoBean.editar(medico)}"> <h:graphicImage value="resources/img/edit.png" /> </h:commandLink>
+                    </h:column>
+                    <h:column>
+                        <h:commandLink action="#{medicoBean.excluir(medico)}"> <h:graphicImage value="resources/img/delete.png" /> </h:commandLink>
+                    </h:column>
+                </h:dataTable>
+            </h:panelGrid>
+        </p:fieldset>
+    </h:form>
+</ui:decorate>
+

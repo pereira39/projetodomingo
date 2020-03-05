@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:decorate xmlns="http://www.w3.org/1999/xhtml"
+             xmlns:h="http://xmlns.jcp.org/jsf/html"
+             xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+             xmlns:p="http://primefaces.org/ui"
+             template="template.xhtml">
+
+  
+    <h:form>
+          <p:fieldset legend="Sistema de Agendamento de Consultas">
+        <h:panelGrid columns="1">
+            <h:outputLabel style="font-size: 30px;" value="Olá #{usuarioBean.usuarioLogado.identificador}, seja bem-vindo ao nosso sistema!"/>
+        </h:panelGrid>
+        <h:panelGrid columns="1">
+           
+            <p>No corre-corre diário muitas vezes não temos tempo disponível para cuidar da gente.</p>
+            <p>É trabalho. É escola das crianças. Contas a pagar...</p>
+            <p>Quando você vê, já são 20 horas!!! E ainda não marcou a consulta que precisava.</p>
+             <p>Agora você pode desfrutar de mais essa comodidade.</p>
+             <p>Nosso sistema está disponível 24 horas para melhor servi-lo.</p>
+        </h:panelGrid>
+                </p:fieldset>
+    </h:form>
+   
+
+</ui:decorate>
+
+

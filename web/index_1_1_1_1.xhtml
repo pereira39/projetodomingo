@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:decorate xmlns="http://www.w3.org/1999/xhtml"
+             xmlns:h="http://xmlns.jcp.org/jsf/html"
+             xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+             xmlns:p="http://primefaces.org/ui"
+             template="template.xhtml">
+
+    
+    <h:form>
+        <h:panelGrid columns="1">
+            <h:outputLabel style="font-size: 30px;" value="Olá #{usuarioBean.usuarioLogado.identificador}, seja bem-vindo ao nosso sistema!"/>
+        </h:panelGrid>
+        <h:panelGrid columns="1">
+            <h:link value="Cadastrar novo usuário" outcome="cadastrarUsuario"/>
+        </h:panelGrid>
+        <h:panelGrid columns="1">
+            <h:link value="Listar usuários" outcome="listarUsuario"/>
+        </h:panelGrid>
+        <h:panelGrid columns="1">
+            <h:link value="Sair" outcome="login"/>
+        </h:panelGrid>
+    </h:form>
+    <span>Sistema de Agendamento de Consultas</span>
+
+</ui:decorate>
+
+
